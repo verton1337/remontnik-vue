@@ -1,16 +1,24 @@
 <template>
-  <input type="text" :placeholder="$props.placeholder" :style = "{width:($props.w || 635) + 'px'}">
+  <input type="date" :min="currentDate()" :value="currentDate()" :style = "{width:($props.w || 635) + 'px'}">
 </template>
 
 <script>
+import { computed } from '@vue/reactivity';
 export default {
-    name: "MyInput",
+    name: "MyDateInput",
     props:{
-            placeholder:String,
+          
             w:Number,
- 
 
-        }
+        },
+    methods: {
+    currentDate() {
+      const current = new Date();
+      const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+      return date;
+    },
+    
+  }
 
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="card">
 
-    <img class="pic" src="" alt="">
+    <img class="pic" :src="$props.pic" alt="">
     <span class="description">
           <slot> </slot>
     </span>
@@ -12,6 +12,11 @@
 <script>
 export default {
     name: "Card",
+    props:{
+        pic:String,
+        
+    }
+    
 
 
 }
@@ -40,7 +45,7 @@ export default {
 
         color: rgba(64, 66, 62, 0.88);
 
-        border: 1px solid #FFFFFF;
+        
     }
 
 </style>

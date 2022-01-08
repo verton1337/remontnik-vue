@@ -1,6 +1,6 @@
 <template>
     <div class="nav-menu">
-    <img class="close-btn" src="img/x-btn.svg" alt="">
+    <img class="close-btn" src="img/x-btn.svg" alt="" @click="$emit('callback')">
     <ul class="menu">
         <li class="menu-item">Заказать звонок</li>
         <li class="menu-item">О компании</li>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: "Menu"
+    name: "Menu",
 
 }
 </script>
@@ -37,13 +37,16 @@ export default {
         top:0;
         z-index: 9;
         margin-right: 0;
-        width: 250px;
+        width: 300px;
         background: #FFFFFF;
         border: 1px solid rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 0px 0px 25px 25px;
 
+    }
+    .nav-menu *{
+        margin-left: 5px;
     }
 
     ul{
@@ -65,6 +68,7 @@ export default {
         position: absolute;
         right: 0;
         width: 32px;
+        cursor:pointer;
     }
 
 </style>

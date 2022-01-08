@@ -1,13 +1,17 @@
 <template>
   <div class="header">
+      <router-link to="/">
       <div class="logo-block">
           <img src="img/logo.png" class="logo" alt="">
           <span class="gray-text">Ремонтник</span><span class="green-text">.online</span>
       </div>
+      </router-link>
       <div class="menu-block">
-          <img class="menu-btn" src="img/menu-btn.svg" alt="">
+          <img class="menu-btn" src="img/menu-btn.svg" alt="" @click="toggleMenu">
           
      </div>
+    
+     <Menu v-show="menuVisible" @callback="toggleMenu"></Menu>
   </div>
 </template>
 
@@ -18,6 +22,17 @@ export default {
     components:{
         Menu,
 
+    },
+    data(){
+        return{
+            menuVisible: false,
+
+        }
+    },
+    methods:{
+        toggleMenu(){
+            this.menuVisible = !this.menuVisible
+        }
     }
 
 }
@@ -67,6 +82,10 @@ export default {
     .menu-btn{
         margin-top: 2rem;
         margin-right: 1rem;
+        cursor:pointer;
+    }
+    a{
+        text-decoration: none;
     }
 
 </style>

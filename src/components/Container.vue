@@ -1,22 +1,26 @@
 <template>
   <div class="container">
       <div class="text">
-          <span class="category">Category</span>
+          <span class="category">{{ $props.category}}</span>
           <p class="description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus dicta voluptates eveniet quas saepe enim quae unde et consectetur veniam!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aliquam consequuntur, voluptatibus aperiam sequi mollitia at voluptate rem neque qui quibusdam fuga corrupti et sunt quos omnis, id sint nam.
-          </p>
+             <slot> </slot> 
+         </p>
       </div>
         <span class="price">
-              1600 руб.
+              {{ $props.price}} руб.
           </span>
-        <img  class="pic" src="" alt="">
+        <img  class="pic" :src="$props.pic" alt="">
   </div>
 </template>
 
 <script>
 export default {
+    props:{
+        pic: String,
+        price: Number,
+        category: String,
 
+    }
 }
 </script>
 
@@ -27,8 +31,7 @@ export default {
     justify-content: space-between;
     background: rgba(196, 196, 196, 0.13);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    width: 80rem;
-    height: 12rem;
+    
 }
 
 .category{

@@ -38,23 +38,23 @@ export default {
 }
 
 .btn{
-    display: flex;
-    width: 269px;
-    height: 60px;
+    display: inline-block;
+    cursor:pointer;
     background: rgba(242, 36, 36, 0.67);
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
     border-radius: 30px;
 }
 .text{
-
+display: inline-block;
 font-family: Rubik One;
 font-style: normal;
 font-weight: normal;
 font-size: 30px;
 line-height: 37px;
 color: #FFFFFF;
-margin: auto;
+padding: 15px 35px 15px 35px;
+
 
 }
  
