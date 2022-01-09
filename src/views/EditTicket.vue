@@ -1,14 +1,19 @@
 <template>
-  <div class="create-ticket">
+  <div class="edit-ticket">
       <Header></Header>
       <div class="content">
-          <h3>Создание заявки</h3>
-          <MyInput placeholder="Имя клиента"/>
-          <MyInput placeholder="Телефон клиента"/>
+          <h3>Редактирование заявки</h3>
+          <div>
+              <MyInput placeholder="Имя клиента" :w="300"/>
+              <MyInput placeholder="Телефон клиента" :w="300"/>
+          </div>
+
           <MySelect default="Категория заявки" :options="categories" />
           <MyInput placeholder="Адрес"/>
           <MyDateInput/>
-          <Button >Создать</Button>
+          <MyInput placeholder="Адрес"/>
+          <MySelect default="Статус заявки" :options="categories" />
+          <Button >Сохранить</Button>
 
       </div>
   </div>
@@ -22,7 +27,7 @@ import Button from "@/components/Button.vue"
 import MySelect from "@/components/MySelect.vue"
 import MyDateInput from "@/components/MyDateInput.vue"
 export default {
-    name: "CreateTicket",
+    name: "EditTicket",
     components:{
         Header,
         MyInput,
